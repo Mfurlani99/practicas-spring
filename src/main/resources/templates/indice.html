@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+</head>
+<body>
+
+    <h2>Lista de Personas</h2>
+    <a th:href="@{/anexar}">crear persona</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Correo</th>
+            <th>modificar</th>
+            <th>eliminar</th>
+        </tr>
+        <tr th:each="persona : ${personas}">
+            <td th:text="${persona.id_individuo}">ID</td>
+            <td th:text="${persona.nombre}">Nombre</td>
+            <td th:text="${persona.apellido}">Apellido</td>
+            <td th:text="${persona.edad}">Edad</td>
+            <td th:text="${persona.telefono}">Teléfono</td>
+            <td th:text="${persona.correo}">Correo</td>
+            <td>
+                <a th:href="@{/cambiar/{id}(id=${persona.id_individuo})}" th:text="'Cambiar'"></a>
+            </td>
+
+            <td>
+                <a th:href="@{/eliminar/{id}(id=${persona.id_individuo})}" th:text="'Eliminar'"></a>
+            </td>
+            
+        </tr>
+    </table>
+</body>
+</html>

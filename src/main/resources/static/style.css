@@ -1,0 +1,32 @@
+.formulario {
+   display: flex;
+   flex-direction: column;
+   gap: 10px; /* Espacio entre cada elemento del formulario */
+   width: 300px; /* Opcional: Ajusta el ancho del formulario si es necesario */
+}
+
+.formulario label {
+   margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+}
+
+.formulario input {
+   padding: 8px; /* Espacio interno dentro del input */
+   border: 1px solid #ccc; /* Borde para que el input sea visible */
+   border-radius: 4px; /* Bordes redondeados */
+   width: 100%; /* Asegura que los inputs ocupen el ancho completo del formulario */
+}
+
+.body{
+   align-items: center;
+}
+
+input {
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   padding: 10px;
+   width: 100%;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+form{max-width: 500px; margin: 0 auto;}
