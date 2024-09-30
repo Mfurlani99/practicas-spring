@@ -30,3 +30,12 @@ input {
    border-radius: 5px;
 }
 form{max-width: 500px; margin: 0 auto;}
+
+
+.mensaje{
+   font-size: 20px;
+   margin-left: 140px;
+   margin-top: 10px;
+   color: red;
+   font-family: Arial, Helvetica, sans-serif;
+}
