@@ -3,41 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crear ususario</title>
+    <title>Crear usuario</title>
 </head>
 
 <body>
-    <h1>Formulario</h1>
+    <h1>[[#{individuo.tabla}]]</h1>
     <link rel="stylesheet" href="style.css">
     <a th:href="@{/}">volver</a>
     <br />
     <form th:action="@{/salvar}" method="post" th:object="${persona}">
         <input type="hidden" name="id_individuo" th:field="*{id_individuo}">
         <ul>
-
             <li>
-                <label for="nombre">Nombre: </label>
+                <label for="nombre">[[#{individuo.nombre}]] </label>
                 <input type="text" name="nombre" th:field="*{nombre}" />
+                <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error en el nombre</span>
             </li>
             <li>
-                <label for="apellido">apellido: </label>
+                <label for="apellido">[[#{individuo.apellido}]] </label>
                 <input type="text" name="apellido" th:field="*{apellido}" />
+                <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}">Error en el apellido</span>
             </li>
-
             <li>
-                <label for="edad">edad: </label>
+                <label for="edad">[[#{individuo.edad}]] </label>
                 <input type="number" name="edad" th:field="*{edad}" />
+                <span th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">Error en la edad</span>
             </li>
             <li>
-                <label for="telefono">telefono: </label>
+                <label for="telefono">[[#{individuo.telefono}]] </label>
                 <input type="text" name="telefono" th:field="*{telefono}" />
+                <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">Error en el teléfono</span>
             </li>
             <li>
-                <label for="correo">correo: </label>
+                <label for="correo">[[#{individuo.correo}]] </label>
                 <input type="text" name="correo" th:field="*{correo}" />
+                <span th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}">Error en el correo</span>
             </li>
         </ul>
-        <input type="submit" name="salvar" value="salvar">
+        <input type="submit" name="salvar" th:value="#{boton.Salvar}">
     </form>
 </body>
 

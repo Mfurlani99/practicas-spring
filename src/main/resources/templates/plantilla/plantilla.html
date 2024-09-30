@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plantilla</title>
+</head>
+<body>
+    <header th:fragment="encabezado">
+ <h1 th:text="#{layout.titulo}"></h1>
+    </header>
+
+    <footer th:fragment="piepagina">
+      <p>[[#{layout.pie_d_pagina}]]<a href="https://www.google.com/maps" target="_blank">wolf.corp</a></p>
+    </footer>
+</body>
+</html>

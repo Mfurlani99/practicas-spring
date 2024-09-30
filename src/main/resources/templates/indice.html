@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Personas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<header th:replace="plantilla/plantilla :: encabezado"></header>
     <h2>Lista de Personas</h2>
-    <a th:href="@{/anexar}">crear persona</a>
+    <a th:href="@{/anexar}">[[#{individuo.anexar}]]</a>
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-            <th>Teléfono</th>
-            <th>Correo</th>
-            <th>modificar</th>
-            <th>eliminar</th>
+            <th>[[#{individuo.nombre}]]</th>
+            <th>[[#{individuo.apellido}]]</th>
+            <th>[[#{individuo.edad}]]</th>
+            <th>[[#{individuo.telefono}]]</th>
+            <th>[[#{individuo.correo}]]</th>
+            <th>[[#{boton.modificar}]]</th>
+            <th>[[#{boton.Borrar}]]</th>
         </tr>
         <tr th:each="persona : ${personas}">
             <td th:text="${persona.id_individuo}">ID</td>
@@ -27,14 +28,20 @@
             <td th:text="${persona.telefono}">Teléfono</td>
             <td th:text="${persona.correo}">Correo</td>
             <td>
-                <a th:href="@{/cambiar/{id}(id=${persona.id_individuo})}" th:text="'Cambiar'"></a>
+                <a th:href="@{/cambiar/{id}(id=${persona.id_individuo})}">[[#{boton.modificar}]]</a>
             </td>
 
             <td>
-                <a th:href="@{/eliminar/{id}(id=${persona.id_individuo})}" th:text="'Eliminar'"></a>
+                <a th:href="@{/eliminar/{id}(id=${persona.id_individuo})}">[[#{boton.Borrar}]]</a>
             </td>
             
         </tr>
+        
     </table>
+    <div class="mensaje" th:if="${personas == null or personas.empty}">
+        [[#{individuo.Lnull}]]
+    </div>
 </body>
+
+<footer th:replace="plantilla/plantilla :: piepagina"></footer>
 </html>
